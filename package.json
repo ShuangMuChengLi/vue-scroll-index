@@ -1,0 +1,29 @@
+{
+  "name": "vue-scroll-index",
+  "version": "1.0.1",
+  "main": "dist/vue-scroll-index.js",
+  "description": "This is a Vue.js's directive that let the html DOM can be move with mouse",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ShuangMuChengLi/vue-scroll-index.git"
+  },
+  "scripts": {
+    "build": "webpack --progress --hide-modules"
+  },
+  "homepage": "http://www.linchaoqun.com/",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/runtime": "^7.7.2",
+    "@babel/runtime-corejs2": "^7.7.2",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "^8.0.4",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

@@ -1,4 +1,4 @@
-This is a Vue.js's directive that let the html DOM can be move with mouse
+Scroll the list, get the index of the list scroll position.
 
 # Install
 ```bash

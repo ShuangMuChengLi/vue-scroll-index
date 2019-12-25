@@ -14,64 +14,100 @@ Vue.use(VueScrollIndex);
 
 ```bash
 <template>
-  <div class="wrapper">
+  <div>
     <div
-      v-removable="'#btn'"
-      class="box"
+      class="nav-wrapper"
     >
-      <el-button
-        id="btn"
-        size="mini"
-        type="primary"
+      <h2>
+        导航
+      </h2>
+      <p>当前: {{ currentIndex }}</p>
+      <div>
+        <el-button
+          type="primary"
+          @click="ulShow = !ulShow"
+        >显示/隐藏</el-button>
+      </div>
+      <ul
+        class="nav"
       >
-        点击拖拽
-      </el-button>
+        <li
+          v-for="(item, key) in 10"
+          :key="'nav' + key"
+          class="nav-item"
+          :class="{ active: key === currentIndex }"
+        >
+          <header>{{ key }}</header>
+        </li>
+      </ul>
     </div>
-    <div
-      v-removable
-      class="box2"
+
+    <ul
+      v-if="ulShow"
+      id="list"
+      v-scroll-index="callback"
+      class="list"
     >
-      点击拖拽
-    </div>
-    <div
-      v-removable
-      class="box3"
-    >
-      点击拖拽
-    </div>
+      <li
+        v-for="(item, key) in 10"
+        :id="'item' + key"
+        :key="key"
+        class="item"
+      >
+        <header>{{ key }}</header>
+      </li>
+    </ul>
   </div>
 </template>
+
 <script>
 export default {
+  name: 'AnchorTest',
+  data(){
+    return {
+      currentIndex:0,
+      ulShow:true
+    };
+  },
+  mounted() {
+
+  },
+  methods:{
+    callback(index){
+      console.log(index);
+    }
+  }
 };
 </script>
 
 <style scoped lang="less">
-  .wrapper{
-    position: relative;
-    margin: 100px;
+  .list{
+    height: 300px;
+    overflow-y: auto;
+    float: left;
   }
-  .box{
+  .item{
+    width: 300px;
+    height: 200px;
     border: 1px solid #333;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50px;
-    left: 50px;
+    margin: 10px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 20px;
+
   }
-  .box2{
-    border: 1px solid #333;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50px;
-    left: 350px;
-  }
-  .box3{
-    border: 1px solid #333;
-    width: 100px;
-    height: 100px;
+  .nav-wrapper{
+    line-height: 2;
+    width: 200px;
+    float: left;
+    padding:10px;
+    .nav-item{
+      &.active{
+        color: #ff0000;
+      }
+    }
   }
 </style>
+
 
 ```

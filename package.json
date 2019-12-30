@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll-index",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/vue-scroll-index.js",
   "description": "This is a Vue.js's directive that let the html DOM can be move with mouse",
   "license": "MIT",
